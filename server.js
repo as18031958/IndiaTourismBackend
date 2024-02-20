@@ -1,13 +1,13 @@
 import  express  from "express"
 import dotenv from 'dotenv'
-import  connectDB  from "./configdb/db.js"
+// import  connectDB  from "./configdb/db.js"
 import morgan from "morgan"
 import authroute from "./route/authroute.js"
 import cors from 'cors'
 
 
 //config dotenv
-dotenv.config()
+// dotenv.config()
 
 //connectDB
 connectDB();
