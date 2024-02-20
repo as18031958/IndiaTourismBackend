@@ -10,7 +10,7 @@ import cors from 'cors'
 // dotenv.config()
 
 //connectDB
-connectDB();
+// connectDB();
 
 //rest object
 const app = express()
@@ -18,7 +18,7 @@ const app = express()
 //middleware
 app.use(cors())
 app.use(express.json())
-app.use(morgan("dev"))
+// app.use(morgan("dev"))
 
 // app.use('/api',authroute)
 
