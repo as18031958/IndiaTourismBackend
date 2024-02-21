@@ -1,16 +1,16 @@
 import  express  from "express"
 import dotenv from 'dotenv'
-// import  connectDB  from "./configdb/db.js"
+import  connectDB  from "./configdb/db.js"
 // import morgan from "morgan"
-// import authroute from "./route/authroute.js"
+ import authroute from "./route/authroute.js"
 import cors from 'cors'
 
 
 //config dotenv
-// dotenv.config()
+dotenv.config()
 
 //connectDB
-// connectDB();
+ connectDB();
 
 //rest object
 const app = express()
@@ -20,7 +20,7 @@ app.use(cors())
 app.use(express.json())
 // app.use(morgan("dev"))
 
-// app.use('/api',authroute)
+app.use('/api',authroute)
 
 
 const PORT = process.env.PORT
