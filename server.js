@@ -24,6 +24,7 @@ app.use('/api',authroute)
 
 
 const PORT = process.env.PORT
+app.use(express.urlencoded({extended:true}))
 
 //run api
 app.get('/',(req,res)=>{
