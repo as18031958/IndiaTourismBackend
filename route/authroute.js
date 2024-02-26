@@ -1,36 +1,34 @@
 import express from "express";
 import { loginContoller,registerController } from "../controllers/authControllers.js";
-// import { braintreeTokenController,brainTreePaymentController } from "../controllers/paymentController.js";
-// import orderModel from '../models/orderModel.js'
-// import Products from '../models/productModels.js'
+import data from '../models/Models.js'
 
 
 const router = express.Router();
 
 // products function to fetch data
-// const productsController = async (req, res) => {
-//   try {
-//     //   const { _id } = req.body; // Access ID from query parameters for GET request
+const productsController = async (req, res) => {
+  try {
+    //   const { _id } = req.body; // Access ID from query parameters for GET request
 
-//     // Retrieve product data using findById
-//     const product = await Products.find();
+    // Retrieve product data using findById
+    const product = await data.find();
 
-//     if (!product) {
-//       res.status(404).json({ error: "Product not found" });
-//       return; 
-//     }
+    if (!product) {
+      res.status(404).json({ error: "Product not found" });
+      return; 
+    }
 
-//     res.json(product);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Failed to fetch product" });
-//   }
-// };
+    res.json(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to fetch product" });
+  }
+};
 
 // Routing
 router.post("/register", registerController);
 router.post("/login", loginContoller);
-// router.get("/products", productsController); // Assign the products function
+ router.get("/data", productsController); // Assign the products function
 // router.get("/test", testController);
 
 //token
