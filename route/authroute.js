@@ -29,13 +29,7 @@ const productsController = async (req, res) => {
 router.post("/register", registerController);
 router.post("/login", loginContoller);
  router.get("/data", productsController); // Assign the products function
-// router.get("/test", testController);
 
-//token
-// router.get("/braintree/token", braintreeTokenController);
-
-//payments
-// router.post("/braintree/payment", brainTreePaymentController);
 
 
 export default router;
